@@ -62,9 +62,9 @@ public class CartServlet extends HttpServlet {
 
 		if (productName != null) {
 			Product product = new Product().setName(productName);
-			System.out.println("Added " + product + " to cart...");
+			System.out.println("\t- Added " + product + " to cart...");
 			cartRemote.addProductToCart(product);
-			response.getWriter().append("\t\n").append("Added " + product + " to cart...");
+			response.getWriter().append("\n\t").append(" - Added " + product + " to cart...");
 		}
 		boolean listProduct = false;
 		if (request.getParameter("list") != null && !request.getParameter("list").equalsIgnoreCase(EMPTY)) {
