@@ -19,7 +19,7 @@ import io.base.ejb3.session.HelloMessageRemote;
 /**
  * Servlet implementation class HelloWorld
  */
-@WebServlet("/helloworld")
+@WebServlet(urlPatterns = { "/helloworld", "/helloWorld" })
 public class HelloWorldServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(name = "java:jboss/exported/EJB3/HelloMessage")
