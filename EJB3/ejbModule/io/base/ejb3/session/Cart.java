@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
 
 import io.base.entity.Product;
 
@@ -41,7 +39,7 @@ public class Cart implements CartRemote {
 
 	@Override
 	public void addProductToCart(Product product) {
-		System.out.println("Added product now... : "+product);
+		System.out.println("Added product now... : " + product);
 		getProducts().add(product);
 	}
 

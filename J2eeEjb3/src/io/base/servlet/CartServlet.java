@@ -3,7 +3,6 @@ package io.base.servlet;
 import java.io.IOException;
 import java.util.Properties;
 
-import javax.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -15,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import io.base.ejb3.session.Cart;
 import io.base.ejb3.session.CartRemote;
-import io.base.ejb3.session.HelloMessage;
-import io.base.ejb3.session.HelloMessageRemote;
 import io.base.entity.Product;
 
 /**
@@ -33,16 +30,15 @@ public class CartServlet extends HttpServlet {
 	 */
 	public CartServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String productName = null;
 		if (request.getParameter("product") != null && !request.getParameter("product").equalsIgnoreCase(EMPTY)) {
 			productName = request.getParameter("product");
@@ -104,9 +100,9 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

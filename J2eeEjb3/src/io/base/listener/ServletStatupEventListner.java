@@ -1,7 +1,6 @@
 package io.base.listener;
 
 import java.util.Enumeration;
-import java.util.Iterator;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -18,25 +17,25 @@ public class ServletStatupEventListner implements ServletContextListener {
 	 * Default constructor.
 	 */
 	public ServletStatupEventListner() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see ServletContextListener#contextDestroyed(ServletContextEvent)
 	 */
+	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
 	 */
+	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		System.out.println("Starting Servlet context: " + arg0.getServletContext().getContextPath());
 		System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		Enumeration<String> attributes = arg0.getServletContext().getAttributeNames();
 		while (attributes.hasMoreElements()) {
-			String name = (String) attributes.nextElement();
+			String name = attributes.nextElement();
 			System.out.println(name + " : " + arg0.getServletContext().getAttribute(name));
 		}
 		System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");

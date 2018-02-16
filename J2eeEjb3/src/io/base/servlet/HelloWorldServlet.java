@@ -1,7 +1,6 @@
 package io.base.servlet;
 
 import java.io.IOException;
-import java.util.Hashtable;
 import java.util.Properties;
 
 import javax.ejb.EJB;
@@ -39,15 +38,14 @@ public class HelloWorldServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
 			response.getWriter().append("Served at: ").append(request.getContextPath()).append(" {")
 					.append(helloMessageRemote.sayHello("Fucker")).append("}").append(" [")
 					.append(getMessageFromRemoteEjb3("Conventional Fucker")).append("]");
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -56,9 +54,9 @@ public class HelloWorldServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

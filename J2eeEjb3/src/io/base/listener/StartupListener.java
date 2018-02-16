@@ -11,26 +11,25 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class StartupListener implements ServletRequestListener {
 
-    /**
-     * Default constructor. 
-     */
-    public StartupListener() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor.
+	 */
+	public StartupListener() {
+	}
 
 	/**
-     * @see ServletRequestListener#requestDestroyed(ServletRequestEvent)
-     */
-    public void requestDestroyed(ServletRequestEvent arg0)  { 
-         // TODO Auto-generated method stub
-    }
+	 * @see ServletRequestListener#requestDestroyed(ServletRequestEvent)
+	 */
+	@Override
+	public void requestDestroyed(ServletRequestEvent arg0) {
+	}
 
 	/**
-     * @see ServletRequestListener#requestInitialized(ServletRequestEvent)
-     */
-    public void requestInitialized(ServletRequestEvent arg0)  { 
-         // TODO Auto-generated method stub
-    	System.out.println("Listener work: "+arg0.getServletRequest().getRemoteHost());
-    }
-	
+	 * @see ServletRequestListener#requestInitialized(ServletRequestEvent)
+	 */
+	@Override
+	public void requestInitialized(ServletRequestEvent arg0) {
+		System.out.println("Listener work: " + arg0.getServletRequest().getRemoteHost());
+	}
+
 }
